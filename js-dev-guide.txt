@@ -80,51 +80,68 @@ once a primitive value is created, it cannot be changed, although the variable t
 
 ------------------------------------------------------------------------
 
-> NOTE :
+> NOTE : BOM (Browser Object model) and DOM (Document Object model)
 
-BOM (Browser Object model)
+----------------------------------------------------------------------------
 
-DOM (Document Object model)
+1. DOM is a child of window. 
 
+2. Document is the object of window. 
 
-Drawback of popup events is that until user interacts the JS will be on-hold to proceed with further operations.
+----------------------------------------------------------------------------
+
+> Properties of window global object:
+    > window.innerWidth
+    > window.innerHeight
+
+-----------------------------------------------------------------------------
+
+> BOM properties:  (alert, confirm, prompt)
+
+    > location.href="https://www.google.com/"
+    > history.back()
+
+> NOTE : Drawback of popup events is that until user interacts the JS will be on-hold to proceed with further operations.
 
 ----------------------------------------------------------------------------
 
 list of methods: (searching DOM)
 
+1. document.hasChildNodes()   -> output will be boolean. (checks whether it has any child nodes or not)
 
-> let ctitle = document.getElementById("container")
-  ctitle.style.color="red"
+2.  > document.firstElementChild
+    > document.lastElementChild
+    > document.childNodes
 
- works same as 
+3.  let ctitle = document.getElementById("container")
+    ctitle.style.color="red"
 
-> document.getElementById("container").style.color="red"
+    works same as 
 
-
-> document.getElementsByTagName("li")[0].style.color="purple"
-> document.getElementsByClassName("item")
-> document.querySelector("#title")
-> document.querySelector("#little .item")[2].style.color="blue"
-> document.querySelector("#little .item")[2].fontSize="100px"
-> document.querySelector("#little .item")[2].backgroundColor="red"
-> document.querySelector("#one a")[2].setAttribute("href","https://www.google.com")
-
-> document.getElementsByName("gender")
+    > document.getElementById("container").style.color="red"
 
 
-> document.firstElementChild
-> document.lastElementChild
-> document.childNodes
+4.  > document.getElementsByTagName("li")[0].style.color="purple"
+    > document.getElementsByClassName("item")
+    > document.getElementByName("gender")
 
+5.  > document.querySelector("#title")
+
+    > document.querySelector("#little .item")[2].style.color="blue"
+    > document.querySelector("#little .item")[2].fontSize="100px"
+    > document.querySelector("#little .item")[2].backgroundColor="red"
+    > document.querySelector("#one a")[2].setAttribute("href","https://www.google.com")
+
+    > let data = document.querySelectorAll("#title")
 
 
 
 > Table links in JS : (Table DOM)
 Refer to page 36 (code with harry notes)
 
+----------------------------------------------------------------------------------
 
-Use HTML = content only, CSS = style website only, JS = behaviour only
+> NOTE : Use HTML = content only, CSS = style website only, JS = behaviour only
 
 ----------------------------------------------------------------------------------
 API (Application Programming Interface) :

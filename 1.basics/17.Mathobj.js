@@ -20,3 +20,4 @@ console.log(Math.trunc(4.9))  // it returns only the integer part of a number
 let data = (Math.random() * 10)  // generates a random value between 0 and 10
 console.log(Math.round(data))
 
+// ---------------------------------------------------------------------------------

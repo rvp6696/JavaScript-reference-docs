@@ -10,4 +10,5 @@
 6. Why we need functions ?
 7. Difference between var, let and const 
 8. Difference between map() and forEach() method
-9. 
+9. Difference between getElementById and querySelector
+10. 
