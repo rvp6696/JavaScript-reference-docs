@@ -63,7 +63,7 @@ console.log(resnum)
 
 let numarr2 = [5,6,2]
 let finalnumar = numarr2.reduce((accumulator,value,index,array)=> {   // reduce to a single value by running this function
-    return accumulator += value
+    return accumulator += value                                       // .flat(2)  => this method is replacement of reduce in modern time which flattens array of any dimensions
 })
 console.log(finalnumar)
 

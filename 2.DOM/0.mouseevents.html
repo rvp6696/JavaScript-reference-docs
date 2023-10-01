@@ -21,13 +21,13 @@
 <body onload="two('Welcome to Javascript')">
 
     <h1> Mouse Events Example </h1>
-    <button onclick="one()">single Click</button>
+    <button onclick="one()">click</button>
     <button ondblclick="one()">double Click</button>
 
     <button onmousedown="one()">On Mouse Down</button>   <!-- Represents both left or right single click-->
-    <button onmouseenter="one()">On Mouse Enter</button>   <!-- activates when we place the cursor pointer inside button area-->
-    <button onmouseout="one()">On Mouse Enter</button>  <!-- activates when we move the cursor pointer outside button area-->
-    On change: <select onchange="one()">               
+    <button onmouseenter="one()">mouseenter</button>   <!-- activates when we place the cursor pointer inside button area-->
+    <button onmouseout="one()">mouseleave</button>  <!-- activates when we move the cursor pointer outside button area-->
+    On change: <select onchange="one()">               <!-- in event listenener its "change"-->
                     <option> Choose </option>
                     <option> Bangalore </option>
                     <option> Mumbai </option>

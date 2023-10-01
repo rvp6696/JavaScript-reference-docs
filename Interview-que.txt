@@ -11,4 +11,8 @@
 7. Difference between var, let and const 
 8. Difference between map() and forEach() method
 9. Difference between getElementById and querySelector
-10. 
+10. Difference between onclick and addEventListener
+11. Difference between setTimeout(), setInterval()
+12. Difference between Higher order and callback function
+13. Difference between synchronous vs asynchronous
+14. What is Event Loop in JavaScript 

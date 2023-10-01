@@ -23,12 +23,16 @@ Difference between var, let and const :
         > let will not allow to re-declare a variable with same name
         > const will not allow to re-declare a variable with same name
 
-    3. Scope of Variable
+    3. Scope of Variable (Lexical Scoping)
         > var will be able to access outside of the block (global scope)
         > let and const variable once declared will be able to access inside the block
 
 Additional : var once declared and initialized adds that variable to the browser window object.
 	     let does not adds that variable to the browser window object.
+
+------------------------------------------------------------------------------------
+
+> Hoisting in JS, is a mechanism where variable and function declaration are moved to the top of their scope before code executes. 
 
 ------------------------------------------------------------------------------------
 >  - Javascript is of two versions:
@@ -143,7 +147,12 @@ Refer to page 36 (code with harry notes)
 
 > NOTE : Use HTML = content only, CSS = style website only, JS = behaviour only
 
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+> Difference between onclick and addEventListener:
+
+ > addEventListener does not override any existing event handlers, unlike onclick.
+ 
+---------------------------------------------------------------
 API (Application Programming Interface) :
 ---------------------------------------------------------------
 

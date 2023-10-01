@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object</title>
+
+    <style>
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 25px;
+        }
+
+        #container {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            font-size: 30px;
+            color: blue;
+        }
+
+    </style>
+
+    <script>
+        class Myclass{
+
+            // constructer is used to create global variable inside the class
+            constructor() {
+                this.user = ["Ganesh","Alex","Sumith","Manoj"]
+                this.product = ["Email Tool","SMS Tool", "Hiring Tool", "Billing app"]
+                this.city = ["Bangalore","Mumbai","Chennai","Kolkata"]
+            }
+       
+            getUser = () => {
+                let data = ""
+                this.user.map((fullname,index) => {
+                    data += `<p> ${fullname} </p>`
+                })
+                document.getElementById("container").innerHTML = data
+            }
+
+            getProduct = () => {
+                let data = ""
+                this.product.map((productname,index) => {
+                    data += `<p> ${productname} </p>`
+                })
+                document.getElementById("container").innerHTML = data
+            }
+
+            getCity = () => {
+                let data = ""
+                this.city.map((cityname,index) => {
+                    data += `<p> ${cityname} </p>`
+                })
+                document.getElementById("container").innerHTML = data
+            }
+
+            saveUser = () => {
+                let name = document.getElementById("newrecord").value
+                this.user.push(name)
+
+                document.getElementById("newrecord").value =""
+                this.getUser()
+            }
+
+            saveProduct = () => {
+                let product = document.getElementById("newrecord").value
+                this.product.push(product)
+
+                document.getElementById("newrecord").value =""
+                this.getProduct()
+            }
+            
+            saveCity = () => {
+                let cityname = document.getElementById("newrecord").value
+                this.city.push(cityname)
+
+                document.getElementById("newrecord").value =""
+                this.getCity()
+            }
+        }
+
+        const obj1 = new Myclass()
+
+    </script>
+</head>
+
+<body>
+
+    <header> 
+        
+        Enter New Record : <input type="text" id="newrecord"> 
+
+        <button onclick="obj1.saveUser()"> Save User </button>
+        <button onclick="obj1.saveProduct()"> Save Product </button>
+        <button onclick="obj1.saveCity()"> Save City</button>
+    
+        <br>
+        <br>
+    
+        <button onclick="obj1.getUser()"> User List </button>
+        <button onclick="obj1.getProduct()"> Product List </button>
+        <button onclick="obj1.getCity()"> City List</button>
+
+    </header>
+    
+    
+    <div id="container">  </div>
+
+    <p> Class : The class in JS is a collection of member variables and member functions </p>
+    <p> Member Variable: The variables defined under constructor using this operator. 
+        A member variable is able to access by all methods of class. Ex: this.city
+         </p>
+
+    <p> Member method/ function : All the user defined function of a class is called member function.  </p>
+    <p> Constructor : It is a pre-defined function of a javascript class. Constructor is also called "lifecycle function" of a class 
+        Constructor get called automatically while object creation of a class.
+    </p>
+
+    <p> Object of class : The Object is instance of a class.  </p>
+
+    <p> extends: The extends keyword used to inherit feature from one class to another </p>
+
+
+</body>
+
+</html>
+
+<!--
+
+
+
+-->

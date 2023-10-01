@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+
+    <style>
+        
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+            font-size: 60px;
+        }
+
+        p {
+            color: red;
+            font-size: 30px;
+        }
+
+        #container {
+            width: 400px;
+            margin: auto;
+        }
+
+    </style>
+
+    <script>
+
+        class Stock{
+
+            constructor () {
+                this.item = ["Apple","Mango","Banana","Orange","Grapes"]
+            }
+        }
+
+        class Shop extends Stock {
+
+            constructor () {
+                super()   // will call constructor from parent class
+                this.customer = ["Alex", "Suresh","Raj","Ramesh"]
+            }
+
+            getItem = () => {
+                let data = ""
+                this.item.map((itemname,index) => {
+                    data += `<p class="parent"> ${itemname} </p>`
+                })
+                this.printData(data)
+            }
+
+            getCustomer = () => {
+                let data = ""
+                this.customer.map((cname,index) => {
+                    data += `<p class="parent"> ${cname} </p>`
+                })
+                this.printData(data)
+            }
+
+            printData = (result) => {
+                document.getElementById("container").innerHTML = result
+            }
+
+            save = (type) => {
+                if (type == "C"){
+                    let temp = document.getElementById("newrecord").value
+                    this.customer.push(temp)
+                    this.getCustomer()  // it should reload after new value gets added
+                    
+                } else {
+                    let temp = document.getElementById("newrecord").value
+                    this.item.push(temp)
+                    this.getItem()   // it should reload after new value gets added
+                }
+
+                document.getElementById("newrecord").value = ""
+                alert("New record added successfully")
+            }
+        }
+
+        const obj3 = new Shop()
+
+    </script>
+</head>
+
+<body>
+    
+    <header>
+        <h1>Javascript Inheritance Example</h1>
+
+        <button onclick="obj3.getCustomer()"> Customer List </button>
+        <button onclick="obj3.getItem()"> Product List </button>
+
+    </header>
+
+    <p align="center"> 
+
+        Enter New Record : <input type="text" id="newrecord">
+
+        <button onclick="obj3.save('C')"> Save Customer </button>
+        <button onclick="obj3.save('P')"> Save Product </button>
+
+    </p>
+
+    <section id="container">
+
+    </section>
+
+</body>
+
+</html>
