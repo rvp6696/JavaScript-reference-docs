@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+    <script>
+
+        const one = () => {
+            alert("Hi, your message is sent")
+        }
+
+        const two = () => {
+            let a = confirm ("Are you sure ?")
+            if (a==true)
+            alert("Please wait processing.....")
+            else
+            alert("Try Again Later.....")
+        }
+
+        const three = () => {
+            let b= prompt("Enter your mail ID")
+            alert ("The files have been sent to :" + b)
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1> Type of popup in Javascript</h1>
+    <button onclick="one()"> Alert() </button> <!--Click becomes an event here-->
+    <p>Alert(): It is pre-defined function used to give confirmation message to the user, with 1 ok button.</p>
+
+    <button onclick="two()"> Confirm() </button>
+    <p>Confirm(): It is pre-defined function used to ask confirmation from the user to proceed further.</p> 
+    <p>Inside confirm function we have two buttons mentioned below</p>
+    <p>"Ok" : It returns > true</p>
+    <p>"Cancel" : It returns > false</p>
+
+    <button onclick="three()">Prompt()</button>
+    <p>Prompt(): It is pre-defined function used to ask non boolean input from user</p> 
+    <p>with Ok and Cancel button and the Cancel button will return a value null</p>
+</body>
+
+</html>

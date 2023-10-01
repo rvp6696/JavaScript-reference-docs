@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let getgender = (gender) => {
+            alert(gender)
+            document.getElementById("mygender").innerText=`Your Gender is ${gender}`
+        }
+    </script>
+</head>
+
+<body>
+    <h1> javascript & radio button example</h1>
+   What is your gender ?
+   <p>
+      <label for="x"><input type="radio" name="gender" value="Male" id="x" onclick="getgender(this.value)">Male</label>
+      <label for="y"><input type="radio" name="gender" value="Female" id="y" onclick="getgender(this.value)">Female</label>
+   </p>
+    <br/>
+    <h1 id="mygender">?</h1>
+</body>
+
+</html>

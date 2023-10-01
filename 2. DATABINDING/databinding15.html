@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data binding</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let itemlist = [
+            { name: "Apple", price: 300, photo: "1.jpg" },
+            { name: "Mango", price: 100, photo: "2.jpg" },
+            { name: "Banana", price: 40, photo: "3.jpg" }
+        ]
+
+        const getitem = () => {
+            let temp = ""
+            itemlist.map((item, index) => {
+                temp += `<tr>`
+                temp += `<td> ${index} </td>`
+                temp += "<td onclick='details(" + index + ")'> " + item.name + " </td>"  // 
+                temp += `<td> ${item.price} </td>`
+                temp += "<td> <img src='" + item.photo + "' height='100'></td>"
+                temp += "<td> <button onclick='del(" + index + ")'> Delete </button> </td>"
+                temp += `</tr>`
+            })
+            document.getElementById("container").innerHTML = temp
+        }
+
+        const save = () => {
+            let itemname = document.getElementById("itemname").value
+            let itemprice = document.getElementById("itemprice").value
+            let photoname = document.getElementById("photoname").value
+
+            let newitem = { name: itemname, price: itemprice, photo: photoname }
+            itemlist = itemlist.concat(newitem)
+            getitem()  //reload list
+        }
+
+        const details = (index) => {
+            document.getElementById("productpic").src = itemlist[index].photo
+        }
+
+        let del = (index) => {
+            let result = itemlist.splice(index,1)
+            getitem()
+        }
+
+    </script>
+</head>
+
+<body onload="getitem()">
+
+    <!-- Left table-->
+
+    <table align="left" cellpadding="10">
+        <tr>
+            <th colspan="2">
+                <h2> Enter Item Details </h2>
+            </th>
+        </tr>
+
+        <tr>
+            <th> Item Name</th>
+            <th> <input type="text" id="itemname"></th>
+        </tr>
+
+        <tr>
+            <th> Item Price</th>
+            <th> <input type="text" id="itemprice"></th>
+        </tr>
+
+        <tr>
+            <th> Item photo</th>
+            <th> <input type="text" id="photoname"></th>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="save()"> Save Item </button>
+            </th>
+        </tr>
+    </table>
+
+
+    <!-- Right table-->
+    <table align="right" cellpadding="10" width="600">
+        <thead>
+            <tr align="left">
+                <th> Sl No </th>
+                <th> Item Name </th>
+                <th> Item Price </th>
+                <th> Photo </th>
+                <th> Action </th>
+            </tr>
+        </thead>
+
+        <tbody id="container">
+
+        </tbody>
+
+    </table>
+
+    <img src="" height="300" width="500" id="productpic">
+</body>
+
+</html>

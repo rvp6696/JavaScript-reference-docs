@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------
+> Javascript Interview Question bank :
+--------------------------------------------------------------------------
+
+1. Difference between var, let and const
+2. Difference between null and undefined
+3. what is NaN.
+4. Difference between == and === 
+5. Difference between function Parameter and function arguements.
+6. Why we need functions ?
+7. Difference between var, let and const 
+8. Difference between map() and forEach() method
+9. 

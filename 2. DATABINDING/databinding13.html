@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiple objects</title>
+    <style>
+        #container {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            width: 80%;
+        }
+
+        .myuser {
+            margin: 40px;
+            padding: 20px;
+            border: 10px dashed orangered;
+        }
+
+        p{
+            color: blue;
+            font-size: 25px;
+            word-break: break-all;  /* with this property line will break */
+        }
+    </style>
+    <script>
+        let userlist = [
+            {
+                fullname: "Alex",
+                age: "40 Years",
+                education: "MCA",
+                year: 2010,
+                dob: "25-11-2008",
+                city: "Bangalore",
+                exp: "5 years",
+                skill: ["html", "css", "react", "nodejs", "javascript", "php", "mysql"]
+            },
+
+            {
+                fullname: "Ganesh",
+                age: "42 Years",
+                education: "MA",
+                year: 2015,
+                dob: "15-11-2008",
+                city: "Pune",
+                exp: "7 years",
+                skill: ["javascript", "php", "mysql"]
+            },
+
+            {
+                fullname: "Ramesh",
+                age: "32 Years",
+                education: "BE",
+                year: 2019,
+                dob: "15-11-2008",
+                city: "Mumbai",
+                exp: "7 years",
+                skill: ["javascript", "php", "mysql", "react", "nodejs"]
+            }
+        ]
+
+        const userinfo = () => {
+            let data = ""
+
+            userlist.map((user,index) => {
+                data += "<div class='myuser'>"
+                data += `<p> fullname: ${user.fullname} </p>`         
+                data += `<p> age: ${user.age} </p>`
+                data += `<p> education: ${user.education} </p>`
+                data += `<p> year: ${user.year} </p>`
+                data += `<p> dob: ${user.dob} </p>`
+                data += `<p> city: ${user.city} </p>`
+                data += `<p> exp: ${user.exp} </p>`
+                data += `<p> skill: ${user.skill} </p>`
+                data += "</div>"
+            })
+
+            document.getElementById("container").innerHTML = data
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button onclick="userinfo()"> Print Details </button>
+    <br>
+
+    <section id="container"> </section>
+
+
+</body>
+
+</html>

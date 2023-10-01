@@ -1,0 +1,149 @@
+------------------------------------------------------------------------------------------------
+Javascript:
+------------------------------------------------------------------------------------------------
+
+CMD commands reqd for JS:
+
+cls   > clear screen of cmd
+node -v  -> shows the version of node js
+code . -> It will pop up VS code in that folder
+node page1.js    > used to print output in the CMD terminal
+
+-------------------------------------------------------------------------------------
+Difference between var, let and const :
+-------------------------------------------------------------------------------------
+
+    1. Value change
+        > var will allow to change the value
+        > let will allow to change the value
+        > const will not allow to change the value
+
+    2. Variable Re-declaration
+        > var will allow to re-declare a variable with same name
+        > let will not allow to re-declare a variable with same name
+        > const will not allow to re-declare a variable with same name
+
+    3. Scope of Variable
+        > var will be able to access outside of the block (global scope)
+        > let and const variable once declared will be able to access inside the block
+
+Additional : var once declared and initialized adds that variable to the browser window object.
+	     let does not adds that variable to the browser window object.
+
+------------------------------------------------------------------------------------
+>  - Javascript is of two versions:
+        1. es5 (old) - var
+        2. es6 (new) - let, const
+
+  - We use both es5 + es6. (as our web browser updates the html, css and Javascript properties on its own)
+
+------------------------------------------------------------------------
+>  Javascript Datatypes:
+-----------------------------------------------------------------------
+> Datatypes are divided into two parts: 1. Primitive Datatype
+                                        2. Non- Primitive (Reference) Datatype
+                                        
+> In total JavaScript has 8 Datatypes 
+
+  1. List of Primitive Datatype:
+      1. String  
+      2. Number
+      3. Bigint
+      4. Boolean
+      5. Undefined
+      6. Null
+      7. Symbol   - makes any value unique
+
+  2. List of Non- Primitive (Reference) Datatype:
+      1. Object
+
+      > Further the object data type can contain:
+
+        1. An object
+        2. An array 
+        3. A date
+
+NOTE : A mutable value is one that can be changed without creating an entirely new value. 
+In JavaScript, objects and arrays are mutable by default, but primitive values are not — 
+once a primitive value is created, it cannot be changed, although the variable that holds it may be reassigned.
+
+-------------------------------------------------------------------------
+>  Difference: Call by a value (primitive) and call by a reference (non-primitive).
+-------------------------------------------------------------------------
+>  JavaScript is considered a dynamic programming language.
+------------------------------------------------------------------------
+> NOTE: Interpretor reads line by line and complier reads all the code and then shows the errors together
+        
+        JS is an interpretor
+
+        ; is not mandatory if all the content are in new line as reqd
+
+------------------------------------------------------------------------
+
+> NOTE :
+
+BOM (Browser Object model)
+
+DOM (Document Object model)
+
+
+Drawback of popup events is that until user interacts the JS will be on-hold to proceed with further operations.
+
+----------------------------------------------------------------------------
+
+list of methods: (searching DOM)
+
+
+> let ctitle = document.getElementById("container")
+  ctitle.style.color="red"
+
+ works same as 
+
+> document.getElementById("container").style.color="red"
+
+
+> document.getElementsByTagName("li")[0].style.color="purple"
+> document.getElementsByClassName("item")
+> document.querySelector("#title")
+> document.querySelector("#little .item")[2].style.color="blue"
+> document.querySelector("#little .item")[2].fontSize="100px"
+> document.querySelector("#little .item")[2].backgroundColor="red"
+> document.querySelector("#one a")[2].setAttribute("href","https://www.google.com")
+
+> document.getElementsByName("gender")
+
+
+> document.firstElementChild
+> document.lastElementChild
+> document.childNodes
+
+
+
+
+> Table links in JS : (Table DOM)
+Refer to page 36 (code with harry notes)
+
+
+Use HTML = content only, CSS = style website only, JS = behaviour only
+
+----------------------------------------------------------------------------------
+API (Application Programming Interface) :
+---------------------------------------------------------------
+
+> It is a set of rules and protocols that define how different softwares interact with each other.
+
+
+---------------------------------------------------------------
+REST APIs:
+---------------------------------------------------------------
+
+> This API follows particular set of rules.
+> Most imp rule is We use HTTP protocol, to interact with the API.
+> 
+
+---------------------------------------------------------------
+JSON (Javascript Object Notation):
+---------------------------------------------------------------
+
+> It is a way to format data that can be sent over internet in a readable and also efficient way.
+

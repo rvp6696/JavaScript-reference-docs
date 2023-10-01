@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let data = "<h1> Welcome to Javascript </h1> <p> It is simple paragraph </p>"
+        let data2 = "Welcome to home"
+        const one = () => {
+            document.getElementById("container").innerHTML = data
+        }
+
+        const two = () => {
+            document.getElementById("container").innerText = data2
+        }
+    </script>
+</head>
+
+<body>
+    <h1> Javascript innerHTML and innerText Difference</h1>
+    <button onclick="one()"> innerHTML </button>
+    <button onclick="two()"> innerText </button>
+    <br>
+    <br>
+
+    <div id="container"> No Data </div>
+</body>
+
+</html>
+
+
+
+<!-- JS communicates with the user in two ways either to take input or to show an output -->
+<!-- To show an output we have innerHTML and innerText -->
+<!-- .innerHTML is used when want to send a information in form of HTML tags to output -->
+<!-- .innerText is used when want to send a text to output -->
+
+<!-- In similar fashion, JS can collect data sent by the user with input tag using ".value()" -->

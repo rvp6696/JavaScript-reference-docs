@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</head>
+<body onload="getbook()">
+    <h1 align="center">Single Dimensional Array Amnipulation (Add, List, Delete)</h1>
+    <div align="center">
+        Enter Book Name : <input type="text" id="newbook">
+        <button onclick="save()"> Save </button>
+    </div>
+
+    <br>
+
+    <table align="center" cellpadding="15" cellspacing="0" border="1">
+        <thead>
+            <tr>
+                <th> Item Index </th>
+                <th> Item Name </th>
+                <th> Delete </th>
+            </tr>
+        </thead>
+        <tbody id="container">
+
+        </tbody>
+    </table>
+
+    <script>
+        let allbook = ["HTML", "CSS", "REACT","JAVASCRIPT","PYTHON"]
+
+        let delbook = (index) => {
+            let bookname = allbook[index]
+            allbook.splice(index,1)  // index is position of elemnet to be deleted
+            // 1 is the number of element should get deleted from given position
+            
+            getbook()
+            swal(bookname, " Deleted Successfull ", "warning")
+        }
+
+        let getbook = () => {
+            let result = ""
+            allbook.map((bookname,index) => {
+                result = result + `<tr>`
+                result = result + `<td> ${index} </td>`
+                result = result + `<td> ${bookname} </td>`
+                result = result + "<td> <button onclick='delbook("+ index +")'> Delete </button> </td>" 
+                result = result + `</tr>`
+            })
+            document.getElementById("container").innerHTML = result
+        }
+
+        let save = () => {
+            let book = document.getElementById("newbook").value
+            allbook.push(book)
+            getbook()
+
+            document.getElementById("newbook").value="" // empty textbox
+
+            swal(book,"Save successfully", "success") // used for sweet alert (pop-up) of a message ( we need to link a CDN for this to work)
+        }
+
+    </script>
+</body>
+</html>

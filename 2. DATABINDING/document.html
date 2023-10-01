@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const one = () => {
+            document.write("<h1> Hi, Javascript is Awesome </h1>")
+        }
+
+        const two = () => {
+            document.getElementById("xyz").innerText=("Hi, Javascript is Awesome ")  /*inner text is normal property for output*/
+        }
+
+    </script>
+</head>
+<body>
+    <h1> What is document and write function in JS ?</h1>
+    <p> document : The current page where html start and where html end</p>
+    <p> write() : is a predefined function of JS, to replace everything in current document</p>
+
+    <button onclick="one()"> document.write() </button>
+    <button onclick="two()"> Click to change in h2 </button>
+
+    <h2 id="xyz"> </h2>
+
+</body>
+</html>

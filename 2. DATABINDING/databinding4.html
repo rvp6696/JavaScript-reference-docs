@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const one = () => {
+            const name = document.getElementById("fname").value.trim()
+            const final = name.length
+            document.getElementById("container").innerText = name
+            document.getElementById("total").innerText = `the no of characters are ${final}` 
+            document.getElementById("pending").innerText = `${100-final} is left out of 100 characters` 
+
+            if (final >= 80 && final<90) 
+            {
+                document.getElementById("pending").style.color="orange"
+            }
+            else if (final >= 90) 
+            {
+                document.getElementById("pending").style.color="red"
+            }
+            else {
+                document.getElementById("pending").style.color="blue"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1> .value and .innerText Example</h1>
+
+    <p>
+        <textarea id="fname" value="bangalore" onkeyup="one()" rows="10" cols="50"></textarea>
+    </p>
+
+    <h1 id="container"> No Data </h1>
+    <p id="total"></p>
+
+    <p id="pending"></p>
+
+</body>
+
+</html>

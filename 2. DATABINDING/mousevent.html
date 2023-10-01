@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const one = () => {
+            alert("The Event is called.....")
+        }
+
+        const two = (xyz) => {
+            alert(xyz)
+        }
+
+    </script>
+</head>
+
+<body onload="two('Welcome to Javascript')">
+
+    <h1> Mouse Events Example </h1>
+    <button onclick="one()">single Click</button>
+    <button ondblclick="one()">double Click</button>
+
+    <button onmousedown="one()">On Mouse Down</button>   <!-- Represents both left or right single click-->
+    <button onmouseenter="one()">On Mouse Enter</button>   <!-- activates when we place the cursor pointer inside button area-->
+    <button onmouseout="one()">On Mouse Enter</button>  <!-- activates when we move the cursor pointer outside button area-->
+    On change: <select onchange="one()">               
+                    <option> Choose </option>
+                    <option> Bangalore </option>
+                    <option> Mumbai </option>
+                    <option> Chennai </option>
+                </select>                                <!-- activates when we choose any option from the drop down-->
+
+    <h1> Keyboard Events Example</h1>
+
+    <p> On key press : <input type="text" value="Apple" onkeypress="two(this.value)"></p>   <!-- press any key the function will be called and "this." represents value inside the current element-->
+    
+    <p> On key up : <input type="text" value="Apple" onkeyup="two(this.value)"></p> <!-- once the keyboard key is up the function will be called -->
+
+    <p> On key down : <input type="text" value="Apple" onkeyup="two(this.value)"></p> <!-- once the keyboard key is down the function will be called -->
+
+    <p> On key focus : <input type="text" value="Apple" onfocus="two(this.value)"></p> <!-- once click the area of text the function will be called -->
+
+    <p> On Blur : <input type="text" value="Apple" onblur="two(this.value)"></p> <!-- works opposite of focus-->
+
+</body>
+
+</html>

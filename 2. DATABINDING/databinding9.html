@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 7px 30px 7px;
+            font-size: 20px;
+        }
+        button:focus {
+            background: red;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            width: 80%;
+            margin: auto;
+        }
+        p {
+            font-size: 60px;
+            color: blue;
+            margin: 20px 30px 20px;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+   <header>  
+     <button onclick="one()"> Print 1 to 10 </button>
+     <button onclick="two()"> Print 11 to 20 </button>
+     <button onclick="three()"> Print 1 to 40 odd number </button>
+     <button onclick="four()"> Print 1 to 40 even number</button>
+     <button onclick="fifth()"> Book List</button>
+     <button onclick="sixth()"> User List</button>
+   </header> 
+
+   <section id="container">
+
+   </section>
+
+</body>
+
+<script>
+    let one = () => {
+        let result =""
+        for (let i=1; i<=10; i++){
+            let temp=(`<p>${i}</p>`)
+            result=result+temp
+        }
+        document.getElementById("container").innerHTML = result
+    }
+
+    let two = () => {
+        let result =""
+        for (let i=11; i<=20; i++){
+            result=result+(`<p>${i}</p>`)
+        }
+        document.getElementById("container").innerHTML = result
+    }
+
+    let three = () => {
+        let result =""
+        for (let i=1; i<=40; i=i+2){
+            result=result+(`<p>${i}</p>`)
+        }
+        document.getElementById("container").innerHTML = result
+    }
+
+    let four = () => {
+        let result =""
+        for (let i=2; i<=40; i=i+2){
+            result=result+(`<p>${i}</p>`)
+        }
+        document.getElementById("container").innerHTML = result
+    }
+
+    let fifth = () => {
+        let allbook = ["html","css","bootstrap","javascript","react","node","python","angular"]
+        let result=[]
+        for (let i=0; i<allbook.length; i++){
+            result = result + `<p> ${allbook[i]}</p>`
+        }
+
+        document.getElementById("container").innerHTML = result
+    }
+
+    let sixth = () => {
+        let alluser = ["Alex","Ganesh","Rajat","Mukesh","Mohit"]
+        let result=[]
+        alluser.map((fullname,index)=> {
+            result = result + `<p> ${fullname}</p>`
+        })
+
+        document.getElementById("container").innerHTML = result
+    }
+</script>
+
+</html>
