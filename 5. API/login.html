@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        let login = () => {
+            let email = document.getElementById("email").value
+            let pass = document.getElementById("pass").value
+            let url = "http://localhost:1234/account?email=" + email + "&password=" + pass
+            
+            fetch(url)
+            .then(response => response.json())
+            .then(userinfo => {
+                if (userinfo.length > 0) {
+                    document.getElementById("message").innerHTML = "<font color='green'> Success, Redirecting..... </font>"
+                    localStorage.setItem("token", userinfo[0].token)
+                    localStorage.setItem("fullname", userinfo[0].name)
+                    window.location.href = "api2.html"
+                } else {
+                    alert("invalid login details !")
+                    document.getElementById("message").innerHTML = "<font color='red'> User does not exist</font>"
+                }
+            })
+
+        }
+    </script>
+</head>
+
+<body>
+    <table align="center" cellpadding="15">
+        <caption> <h1> Login </h1></caption>
+        <tr>
+            <th>e-Mail Id</th>
+            <td> <input type="email" id="email"> </td>
+        </tr>
+
+        <tr>
+            <th>Password</th>
+            <td> <input type="password" id="pass"> </td>
+        </tr>
+
+        <tr>
+            <th colspan="2">
+                <button onclick="login()">Login</button>
+            </th>
+        </tr>
+
+        <tr>
+            <th colspan="2">
+                <p id="message"> </p>
+            </th>
+        </tr>
+
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 25px;
+    text-align: center;
+}
+
+button {
+    color: blue;
+    font-size: 22px;
+    padding: 8px 20px 8px;
+}
+
+button:focus {
+    color: white;
+    background: red;
+}
+
+#apidata {
+    width: 80%;
+    margin: auto;
+    min-height: 500px;
+}
+
+footer {
+    background: purple;
+    color: white;
+    padding: 15px;
+    min-height: 150px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+    font-size: 70px;
+}
+
+.myn1 {
+    margin: 10px;
+    font-size: 25px;
+    color: blueviolet;
+    width:33%;
+    display: inline-block;
+}
+
+.mytwo, .mysix {
+    margin: 2%;
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    border-bottom: 5px dashed orange;
+    min-height: 150px;
+}
+
+h4 {
+    font-size: 22px;
+    color: blue;
+    text-transform: capitalize;
+}
+
+.mythree{
+    margin: 2%;
+    vertical-align: top;
+    min-height: 90px;
+}
+
+.myfour, .myfive {
+    margin: 2%;
+    vertical-align: top;
+}
+

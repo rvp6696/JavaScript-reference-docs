@@ -1,0 +1,71 @@
+{
+  "booklist": [
+    {
+      "id": 4,
+      "name": "ReactJS",
+      "price": "5000",
+      "author": "Sumith"
+    },
+    {
+      "name": "SAP",
+      "price": "12345",
+      "author": "Monoj",
+      "id": 7
+    },
+    {
+      "name": "Java",
+      "price": "12000",
+      "author": "Sriram",
+      "id": 8
+    },
+    {
+      "name": "Python",
+      "price": "40000",
+      "author": "Mahesh",
+      "id": 9
+    },
+    {
+      "name": "Python",
+      "price": "43223",
+      "author": "rohith",
+      "id": 10
+    }
+  ],
+  "productlist": [
+    {
+      "id": 1,
+      "pname": "Printer",
+      "price": 15000,
+      "qty": 10
+    },
+    {
+      "id": 2,
+      "pname": "Scanner",
+      "price": 12000,
+      "qty": 20
+    },
+    {
+      "id": 3,
+      "pname": "Mouse",
+      "price": 1500,
+      "qty": 6
+    }
+  ],
+  "companylist": [],
+  "account": [
+    {
+      "id": 1,
+      "name": "Admin1",
+      "email": "admin1@gmail.com",
+      "password": "123",
+      "token": "111111"
+    },
+    {
+      "id": 2,
+      "name": "Admin2",
+      "email": "admin2@gmail.com",
+      "password": "456",
+      "token": "222222"
+    }
+  ]
+}

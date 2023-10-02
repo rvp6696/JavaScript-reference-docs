@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 500px;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        input {
+            width: 400px;
+            padding: 15px;
+        }
+
+        #container :not(p) {
+            text-align: center;
+        }
+    </style>
+    <script>
+        if (localStorage.getItem("token")==null) [
+            window.location.href="login.html"
+        ]
+        let bookid = 0;
+
+        const getbook = () => {
+            const queryParams = new URLSearchParams(window.location.search)
+            const id = queryParams.get('id');
+            bookid = id;
+            let url = "http://localhost:1234/booklist/" + id
+            fetch(url)
+                .then(response => response.json())
+                .then(bookdata => {
+                    document.getElementById("bname").value = bookdata.name
+                    document.getElementById("bprice").value = bookdata.price
+                    document.getElementById("bauthor").value = bookdata.author
+                })
+
+        }
+        const save = () => {
+            let bookname = document.getElementById("bname").value
+            let bookprice = document.getElementById("bprice").value
+            let bookauthor = document.getElementById("bauthor").value
+            let url = "http://localhost:1234/booklist/" + bookid
+            let newbook = {
+                "name": bookname,
+                "price": bookprice,
+                "author": bookauthor
+            }
+            let postData = {
+                headers: { 'content-Type': 'application/json' },//in which format to sent
+                method: "PATCH",//PUT OR PATCH both will work, PATCH will only patch one field but PUT will send all even if we edit only one field
+                body: JSON.stringify(newbook)//array to json
+            }
+            document.getElementById("mybtn").disabled = true
+            fetch(url, postData)
+                .then(response => response.json())
+                .then(bookinfo => {
+                                      // below is set timer
+                    setTimeout (() => {            
+                        window.location.href = "API2.html"                  // after 5 seconds the page will redirect to API2 page after updating
+                    }, 5000)
+
+                    // count down start here  (below is set interval)
+
+                    let counter = 5
+                    setInterval(function () {
+                        counter--
+                        document.getElementById("msg").innerText = `Updated ... Redirecting in ${counter} seconds`
+                    }, 1000);
+
+                    // count down ends here
+
+                })
+        }
+
+        
+    </script>
+</head>
+
+<body onload="getbook()">
+
+    <div id="container">
+        <h1> Edit Book details</h1>
+        <p id="msg"> </p>
+        <p> Book name</p>
+        <input type="text" id="bname" size="40">
+        <p> Book Price</p>
+        <input type="number" id="bprice">
+        <p>Author</p>
+        <input type="text" id="bauthor">
+        <p>
+            <button onclick="save()" id="mybtn">Update Book</button>
+        </p>
+        <a href="API2.html">Back to list</a>
+    </div>
+
+</body>
+
+</html>

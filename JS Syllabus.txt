@@ -1,0 +1,130 @@
+-----------------------------------------------------------------------------
+  JS Introduction :
+	> JS How to ?
+	> JS Output
+-----------------------------------------------------------------------------
+  Javascript:
+	> Variables & Data type
+-----------------------------------------------------------------------------
+  Control Structure:
+	1. Conditional -
+	   > if else
+	   > else if
+	   > nested if
+	   > switch case
+	
+	2. Loop -
+	   > for loop
+	   > while loop
+	   > do while
+-----------------------------------------------------------------------------
+  Array:
+	> single dimensional
+	> multi dimensional
+	> nested array
+-----------------------------------------------------------------------------
+  Listing Function:
+	> map() - need array
+	> forEach() - need array
+-----------------------------------------------------------------------------
+  Function: (three types)
+	1. function
+	2. function without name
+	3. fat arrow function
+-----------------------------------------------------------------------------
+Above all programs using cmd and nodejs in terminal
+
+
+
+
+
+-----------------------------------------------------------------------------
+  Data Binding:
+	1. type of pop-up window
+	-> alert()
+	-> confirm()
+	-> prompt()
+-----------------------------------------------------------------------------
+  Events in Javascript:
+	-> Type of events javascript
+	a. Mouse Events:
+		-> onclick
+		-> ondblclick
+		-> onmousedown
+		-> onmousemove
+		-> onmouseout
+		-> onchange
+-----------------------------------------------------------------------------
+	b. Keyboard Events:
+		-> onkeypress
+		-> onkeydown
+		-> onkeyup
+		-> onfocus
+		-> onblur
+-----------------------------------------------------------------------------
+	c. Form Events:
+		-> onsubmit - with form validation
+-----------------------------------------------------------------------------
+	d. Body Events:
+		-> onload
+----------------------------------------------------------------------------
+  .value => It is used to pick value to input elements.
+----------------------------------------------------------------------------
+  .innerText => It is used to assign text data to output elements.
+-----------------------------------------------------------------------------
+  .innerHTML => It is used to pick and assign text + html tags to output elements.
+----------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------
+  Array:
+	> single dimensional
+	> multi dimensional
+	> nested array
+	> add, list, edit, delete
+	> HTML + CSS + Bootstrap + javascript
+-----------------------------------------------------------------------------
+  Web Storage:  (HTML5)
+	> local storage
+	> session storage
+-----------------------------------------------------------------------------
+  Live Server:
+	>JSON-Server = How to store data (How to create mock API)
+-----------------------------------------------------------------------------
+  API:
+	> fetch (get, post, put or patch, delete)
+	> then
+	> read local JSON data
+	> read data from server
+	> JSON Parsing
+	> async & await
+-----------------------------------------------------------------------------
+	> Import and export
+-----------------------------------------------------------------------------
+  promise & call back
+-----------------------------------------------------------------------------
+  AJAX
+-----------------------------------------------------------------------------
+  Form Validation
+-----------------------------------------------------------------------------
+  OOPS Concept:
+	> class object
+	> inheritance
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

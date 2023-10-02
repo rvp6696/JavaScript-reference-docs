@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .three {
+            width: 21%;
+            display: inline-block;
+            text-align: center;
+            margin: 2%;
+            box-shadow: 0px 0px 5px red;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .three h3 {
+            color: blue;
+            font-size: 25px;
+        }
+
+        .three button,button {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color:white;
+            background: blue;
+        }
+    </style>
+    <script>
+
+        if (localStorage.getItem("token")==null) [
+            window.location.href="login.html"
+        ]
+
+
+        const getbook = () => {
+            fetch("http://localhost:1234/booklist")
+                .then(response => response.json())
+                .then(bookArray => {
+                    let temp = "";
+                    bookArray.map((book, index) => {
+                        temp = temp + "<div class='three'>"
+                        temp = temp + "<h3>" + book.name + "</h3>"
+                        temp = temp + "<p>" + book.price + "</p>"
+                        temp = temp + "<p>" + book.author + "</p>"
+                        temp = temp + `<p> <button onclick="delbook('${book.id}')"> Delete </button> </p>`
+                        temp = temp + "<p><a href='editbook.html?id="+book.id+"'>Edit Book </a></p>"
+                        temp = temp + "</div>"
+                    })
+                    document.getElementById("container").innerHTML = temp;
+                })
+        }
+        const getproduct = () => {
+            fetch("http://localhost:1234/productlist")
+                .then(response => response.json())
+                .then(productArray => {
+                    let temp = "";
+                    productArray.map((product, index) => {
+                        temp = temp + "<div class='three'>"
+                        temp = temp + "<h3>" + product.pname + "</h3>"
+                        temp = temp + "<p>" + product.price + "</p>"
+                        temp = temp + "<p>" + product.qty + "</p>";
+                        temp = temp + "<p><button onclick='delbook2(" + product.id + ")'> Delete</button></p>"
+                        temp = temp + "</div>"
+                    })
+                    document.getElementById("container").innerHTML = temp;
+                    
+                })
+        }
+        const delbook = (bookid) => {
+            let url="http://localhost:1234/booklist/"+bookid;
+            let postData={method:"delete"}
+            fetch(url,postData)
+            .then(response=>response.json())
+            .then(emptyres=>{
+                alert("Record Deleted from Server");
+                getbook();//Call to reload the list
+
+            })
+            .catch(error=>{
+                alert("Error While Deleting");
+            })
+        }
+        const delbook2 = (productid) => {
+            let url="http://localhost:1234/productlist/"+productid;
+            let postData={method:"delete"}
+            fetch(url,postData)
+            .then(response=>response.json())
+            .then(emptyres=>{
+                alert("Record Deleted from Server")
+                // getproduct();//Call to reload the list
+
+            })
+            .catch(error=>{
+                alert("Error While Deleting");
+            })
+        }
+        const addbook=()=>{
+            window.location.href="newbook.html"
+        }
+    </script>
+</head>
+
+<body onload="getbook()">
+    <center>
+        <button onclick="addbook()">Add List</button>
+        <button onclick="getbook()">Book List</button>
+        <button onclick="getproduct()">Product List</button>
+        <button>Company List</button>
+        <button id="profile" onclick="logout()"></button>
+    </center>
+
+    <section id="container">
+
+    </section>
+
+    <script>
+        document.getElementById("profile").innerText = "Welcome..." + localStorage.getItem("fullname") + " Logout"
+
+        const logout = () => {
+            localStorage.clear()
+            window.location.reload()
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
