@@ -1,3 +1,13 @@
+
+// Lexical Scoping in JS
+
+/*
+    1. All inner functions can access data from the outer function(parent)
+    2. If  two seperate functions wriiten inside a function, then these both cannot access each others data.
+    3. Outer functions cannot access data from child/inner functions
+
+*/
+
 // Closure in JS
 
 
@@ -10,5 +20,5 @@ let data = (a) => {
 }
 
 
-let result = data(5)
+let result = data(5)    // here the enitre Lexical scope moves to "result"
 console.log(result(5))

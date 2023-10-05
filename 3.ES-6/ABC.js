@@ -6,12 +6,12 @@
     2. Bind 
     3. Call 
 
-    > Call : this method calls a function with a given this value and arguements provided individually
+   holds the reference after execution
 
     > 
 */
 
-// Call function :
+// Call function :   passess the current execution context to another function
 // Example 1
 let userDetails = {
     name:"Rohith",
@@ -53,6 +53,24 @@ let usertwo = {
 }
 
 printDetails.call(usertwo)
+
+// Example 3
+
+function SetUsername(username){
+    //complex DB calls
+    this.username = username
+    console.log("called");
+}
+
+function createUser(username, email, password){
+    SetUsername.call(this, username)
+   
+    this.email = email
+    this.password = password
+}
+
+const chai = new createUser("chai", "chai@fb.com", "123")
+console.log(chai);
 
 // Apply function :
 

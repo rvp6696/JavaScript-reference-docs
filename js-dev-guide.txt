@@ -108,7 +108,19 @@ once a primitive value is created, it cannot be changed, although the variable t
 > NOTE : Drawback of popup events is that until user interacts the JS will be on-hold to proceed with further operations.
 
 ----------------------------------------------------------------------------
+> Javascript Execution context:   JS is single threaded
+----------------------------------------------------------------------------
+	1. Global Execution context
+	2. Function Execution context
 
+
+	i. Memory creation phase or creation phase
+	ii. Execution phase 
+
+Process:  Global Execution context > Memory creation phase > Execution phase > Function Execution context
+
+
+----------------------------------------------------------------------------
 list of methods: (searching DOM)
 
 1. document.hasChildNodes()   -> output will be boolean. (checks whether it has any child nodes or not)
